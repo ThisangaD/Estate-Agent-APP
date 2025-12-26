@@ -30,17 +30,7 @@ const SearchForm = ({ onSearch }) => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      style={{
-        background: "#f8f9fa",
-        padding: "30px",
-        borderRadius: "12px",
-        maxWidth: "900px",
-        margin: "30px auto",
-        boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
-      }}
-    >
+    <form onSubmit={handleSubmit}>
       <h2 style={{ textAlign: "center", marginBottom: "25px" }}>
         Find Your Property
       </h2>
@@ -131,7 +121,12 @@ const SearchForm = ({ onSearch }) => {
           <br />
           <input
             type="date"
-            style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+            style={{
+              width: "100%",
+              padding: "10px",
+              borderRadius: "5px",
+              border: "1px solid #ccc",
+            }}
             value={addedAfter}
             onChange={(e) => setAddedAfter(e.target.value)}
           />
@@ -142,7 +137,12 @@ const SearchForm = ({ onSearch }) => {
           <br />
           <input
             type="date"
-            style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+            style={{
+              width: "100%",
+              padding: "10px",
+              borderRadius: "5px",
+              border: "1px solid #ccc",
+            }}
             value={addedBefore}
             onChange={(e) => setAddedBefore(e.target.value)}
           />

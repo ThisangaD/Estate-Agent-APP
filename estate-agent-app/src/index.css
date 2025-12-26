@@ -1,21 +1,44 @@
+/* Reset & Base */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background-color: #f9f9f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fc;
+  color: #333;
   line-height: 1.6;
 }
 
-/* Main layout */
+/* Header */
+header {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  padding: 35px 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 8px;
+}
+
+header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Main container */
 .main-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 15px;
 }
 
+/* Layout */
 .layout-flex {
   display: flex;
   gap: 30px;
@@ -27,68 +50,219 @@ body {
 
 .favorites-section {
   flex: 1;
+  background: white;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 20px;
   align-self: flex-start;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* Responsive – stack on small screens */
+/* Search Form – Compact */
+.search-form {
+  background: white;
+  padding: 16px 20px; /* Small padding */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin: 20px 0;
+}
+
+.search-form h2 {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #007bff;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* Grid – Very tight */
+.search-form > div > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px; /* Minimal gap */
+}
+
+/* Labels – No space below */
+.search-form label {
+  display: block;
+  margin-bottom: 3px; /* Tiny space */
+  font-weight: 600;
+  color: #444;
+  font-size: 0.85rem;
+}
+
+/* Inputs – Tight, small */
+.search-form input,
+.search-form select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: border-color 0.3s;
+}
+
+.search-form input:focus,
+.search-form select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+/* Search button – Compact */
+.search-form > div:last-child {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.search-form button {
+  padding: 10px 30px;
+  font-size: 1rem;
+}
+
+/* Buttons – Lifting + Shadow Hover (Kept as Requested) */
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 11px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+button:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Property Card – Subtle Shadow Hover Only (No Lift) */
+.property-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background: white;
+  overflow: hidden;
+  transition: box-shadow 0.4s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.property-card:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.473); /* Deeper shadow only */
+  border-color: #bbd9ff;
+  /* No transform – no lifting */
+}
+
+.property-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.property-info {
+  padding: 20px;
+}
+
+.property-info h3 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+  color: #007bff;
+}
+
+.property-info h2 {
+  margin: 8px 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.location {
+  color: #666;
+  font-size: 0.95rem;
+  margin: 8px 0;
+}
+
+.description {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.favorite-btn, .details-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.details-btn {
+  background: #007bff;
+  color: white;
+}
+
+.details-btn:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+.favorite-btn {
+  background: #e91e63;
+  color: white;
+}
+
+.favorite-btn:hover:not(:disabled) {
+  background: #c2185b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(233, 30, 99, 0.3);
+}
+
+.favorite-btn:disabled {
+  background: #999;
+  cursor: not-allowed;
+}
+
+.details-link {
+  flex: 1;
+  text-decoration: none;
+}
+
+/* Responsive */
 @media (max-width: 1024px) {
   .layout-flex {
     flex-direction: column;
   }
-  
+
   .favorites-section {
     position: static;
-    margin-top: 40px;
+    margin-top: 35px;
   }
 
-  /* Stack form fields on mobile */
   form > div > div {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr;
   }
 }
 
-/* Aesthetics improvements */
-header {
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
 
-form {
-  background: white;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
+  form {
+    padding: 16px;
+  }
 
-button {
-  transition: all 0.2s;
-}
-
-button:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-h1, h2, h3 {
-  color: #333;
-  margin-bottom: 15px;
-}
-
-label {
-  font-weight: bold;
-  color: #555;
-  margin-bottom: 8px;
-  display: block;
-}
-
-/* Card hover effect */
-div[style*="maxWidth: '300px'"] {  /* Targets PropertyCard */
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-div[style*="maxWidth: '300px'"]:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  form h2 {
+    font-size: 1.4rem;
+  }
 }

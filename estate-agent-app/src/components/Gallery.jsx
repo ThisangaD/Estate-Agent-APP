@@ -59,6 +59,31 @@ const Gallery = ({ criteria }) => {
         );
       }
 
+      // Added date filter
+      if (criteria.addedAfter || criteria.addedBefore) {
+        filtered = filtered.filter(p => {
+          const monthNames = ["January", "February", "March", "April", "May", "June",
+                              "July", "August", "September", "October", "November", "December"];
+          const monthIndex = monthNames.indexOf(p.added.month);
+          const propertyDate = new Date(p.added.year, monthIndex, p.added.day);
+
+          let afterOk = true;
+          let beforeOk = true;
+
+          if (criteria.addedAfter) {
+            const afterDate = new Date(criteria.addedAfter);
+            afterOk = propertyDate >= afterDate;
+          }
+          if (criteria.addedBefore) {
+            const beforeDate = new Date(criteria.addedBefore);
+            beforeDate.setHours(23, 59, 59, 999);
+            beforeOk = propertyDate <= beforeDate;
+          }
+
+          return afterOk && beforeOk;
+        });
+      }
+
       setFilteredProperties(filtered);
     } else {
       setFilteredProperties(allProperties); // Reset if no criteria

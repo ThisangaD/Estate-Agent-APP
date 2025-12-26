@@ -30,6 +30,7 @@ const SearchForm = ({ onSearch }) => {
   };
 
   return (
+    <div className="search-form-container" style={{ padding: "20px", background: "#dbdbdb52" }}>
     <form onSubmit={handleSubmit}>
       <h2 style={{ textAlign: "center", marginBottom: "25px" }}>
         Find Your Property
@@ -167,7 +168,9 @@ const SearchForm = ({ onSearch }) => {
         </button>
       </div>
     </form>
+    </div>
   );
+  
 };
 
 export default SearchForm;

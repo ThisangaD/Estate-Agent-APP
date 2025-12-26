@@ -30,11 +30,11 @@ function App() {
         <Route path="/" element={
           <>
             <SearchForm onSearch={handleSearch} />
-            <div style={{ display: 'flex', gap: '30px', padding: '20px', maxWidth: '1400px', margin: '0 auto' }}>
+            <div className="main-layout" style={{ display: 'flex', gap: '30px', padding: '20px', maxWidth: '1400px', margin: '0 auto' }}>
               <div style={{ flex: '3' }}>
                 <Gallery criteria={searchCriteria} properties={properties} />
               </div>
-              <div style={{ flex: '1', position: 'sticky', top: '20px', alignSelf: 'flex-start' }}>
+              <div className="favorites-sidebar" style={{ flex: '1', position: 'sticky', top: '20px', alignSelf: 'flex-start' }}>
                 <FavoritesList />
               </div>
             </div>

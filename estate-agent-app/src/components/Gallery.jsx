@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import PropertyCard from "./PropertyCard";
 
 const Gallery = ({ criteria }) => {
-  // Added criteria prop from parent
-  const [allProperties, setAllProperties] = useState([]); // All data from JSON
-  const [filteredProperties, setFilteredProperties] = useState([]); // Filtered list
+  const [allProperties, setAllProperties] = useState([]);
+  const [filteredProperties, setFilteredProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fetch data once
+  // Fetch properties.json once when component mounts
   useEffect(() => {
     fetch("/properties.json")
       .then((response) => {
@@ -17,7 +16,7 @@ const Gallery = ({ criteria }) => {
       })
       .then((data) => {
         setAllProperties(data.properties);
-        setFilteredProperties(data.properties); // Start with all
+        setFilteredProperties(data.properties);
         setLoading(false);
       })
       .catch((err) => {
@@ -26,17 +25,17 @@ const Gallery = ({ criteria }) => {
       });
   }, []);
 
-  // Filter when criteria changes
+  // Filter whenever criteria changes
   useEffect(() => {
-    if (criteria) {
-      let filtered = allProperties;
+    let filtered = allProperties;
 
+    if (criteria) {
       // Type filter
       if (criteria.type && criteria.type !== "Any") {
         filtered = filtered.filter((p) => p.type === criteria.type);
       }
 
-      // Price filter
+      // Price filters
       if (criteria.minPrice) {
         filtered = filtered.filter((p) => p.price >= criteria.minPrice);
       }
@@ -44,7 +43,7 @@ const Gallery = ({ criteria }) => {
         filtered = filtered.filter((p) => p.price <= criteria.maxPrice);
       }
 
-      // Bedrooms filter
+      // Bedrooms filters
       if (criteria.minBedrooms) {
         filtered = filtered.filter((p) => p.bedrooms >= criteria.minBedrooms);
       }
@@ -59,11 +58,13 @@ const Gallery = ({ criteria }) => {
         );
       }
 
-      // Added date filter
+      // Date added filters (after / before / between)
       if (criteria.addedAfter || criteria.addedBefore) {
-        filtered = filtered.filter(p => {
-          const monthNames = ["January", "February", "March", "April", "May", "June",
-                              "July", "August", "September", "October", "November", "December"];
+        filtered = filtered.filter((p) => {
+          const monthNames = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+          ];
           const monthIndex = monthNames.indexOf(p.added.month);
           const propertyDate = new Date(p.added.year, monthIndex, p.added.day);
 
@@ -74,24 +75,23 @@ const Gallery = ({ criteria }) => {
             const afterDate = new Date(criteria.addedAfter);
             afterOk = propertyDate >= afterDate;
           }
+
           if (criteria.addedBefore) {
             const beforeDate = new Date(criteria.addedBefore);
-            beforeDate.setHours(23, 59, 59, 999);
+            beforeDate.setHours(23, 59, 59, 999); // Include whole day
             beforeOk = propertyDate <= beforeDate;
           }
 
           return afterOk && beforeOk;
         });
       }
-
-      setFilteredProperties(filtered);
-    } else {
-      setFilteredProperties(allProperties); // Reset if no criteria
     }
-  }, [criteria, allProperties]); // Run when criteria or data changes
 
-  if (loading) return <p>Loading properties...</p>;
-  if (error) return <p>Error: {error}</p>;
+    setFilteredProperties(filtered);
+  }, [criteria, allProperties]);
+
+  if (loading) return <p style={{ textAlign: "center", padding: "50px" }}>Loading properties...</p>;
+  if (error) return <p style={{ textAlign: "center", color: "red" }}>Error: {error}</p>;
 
   return (
     <div
@@ -100,6 +100,8 @@ const Gallery = ({ criteria }) => {
         gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
         gap: "20px",
         padding: "20px",
+        maxWidth: "1200px",
+        margin: "0 auto",
       }}
     >
       {filteredProperties.map((property) => (

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const PropertyCard = ({ property }) => {
   const { id, picture, type, bedrooms, price, location, description } = property;
@@ -22,6 +23,7 @@ const PropertyCard = ({ property }) => {
       <h2>£{price.toLocaleString()}</h2>
       <p style={{ color: '#555', fontSize: '14px' }}>{location}</p>
       <p style={{ fontSize: '14px' }}>{description.substring(0, 150)}...</p>
+      <Link to={`/property/${id}`} style={{ textDecoration: 'none' }}>
       <button style={{
         backgroundColor: '#007bff',
         color: 'white',
@@ -32,6 +34,7 @@ const PropertyCard = ({ property }) => {
       }}>
         View Details
       </button>
+      </Link>
     </div>
   );
 };

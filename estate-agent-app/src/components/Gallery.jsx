@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropertyCard from "./PropertyCard";
 
-const Gallery = ({ criteria }) => {
+const Gallery = ({ criteria , properties}) => {
   const [allProperties, setAllProperties] = useState([]);
   const [filteredProperties, setFilteredProperties] = useState([]);
   const [loading, setLoading] = useState(true);

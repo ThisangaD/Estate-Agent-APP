@@ -4,22 +4,91 @@
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   background-color: #f9f9f9;
+  line-height: 1.6;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Main layout */
+.main-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
+.layout-flex {
+  display: flex;
+  gap: 30px;
+}
+
+.gallery-section {
+  flex: 3;
+}
+
+.favorites-section {
+  flex: 1;
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsive – stack on small screens */
 @media (max-width: 1024px) {
-  .main-layout {
+  .layout-flex {
     flex-direction: column;
   }
   
-  .favorites-sidebar {
+  .favorites-section {
+    position: static;
     margin-top: 40px;
-    position: static !important;
   }
+
+  /* Stack form fields on mobile */
+  form > div > div {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Aesthetics improvements */
+header {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+form {
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+button {
+  transition: all 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+h1, h2, h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Card hover effect */
+div[style*="maxWidth: '300px'"] {  /* Targets PropertyCard */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+div[style*="maxWidth: '300px'"]:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }

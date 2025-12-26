@@ -131,6 +131,7 @@ const SearchForm = ({ onSearch }) => {
           <br />
           <input
             type="date"
+            style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
             value={addedAfter}
             onChange={(e) => setAddedAfter(e.target.value)}
           />
@@ -141,6 +142,7 @@ const SearchForm = ({ onSearch }) => {
           <br />
           <input
             type="date"
+            style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
             value={addedBefore}
             onChange={(e) => setAddedBefore(e.target.value)}
           />

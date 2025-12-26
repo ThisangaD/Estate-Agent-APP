@@ -22,20 +22,30 @@ function App() {
 
   return (
     <div>
-      <header style={{ backgroundColor: '#007bff', color: 'white', padding: '20px', textAlign: 'center' }}>
+      <header style={{ 
+        backgroundColor: '#007bff', 
+        color: 'white', 
+        padding: '20px', 
+        textAlign: 'center' 
+      }}>
         <h1>Estate Agent Property Search</h1>
+        <p>Find your dream home in London</p>
       </header>
 
       <Routes>
+        {/* Search Page */}
         <Route path="/" element={
           <>
             <SearchForm onSearch={handleSearch} />
-            <div className="main-layout" style={{ display: 'flex', gap: '30px', padding: '20px', maxWidth: '1400px', margin: '0 auto' }}>
-              <div style={{ flex: '3' }}>
-                <Gallery criteria={searchCriteria} properties={properties} />
-              </div>
-              <div className="favorites-sidebar" style={{ flex: '1', position: 'sticky', top: '20px', alignSelf: 'flex-start' }}>
-                <FavoritesList />
+            
+            <div className="main-container">
+              <div className="layout-flex">
+                <div className="gallery-section">
+                  <Gallery criteria={searchCriteria} properties={properties} />
+                </div>
+                <div className="favorites-section">
+                  <FavoritesList />
+                </div>
               </div>
             </div>
           </>

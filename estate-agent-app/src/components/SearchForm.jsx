@@ -40,6 +40,7 @@ const SearchForm = ({ onSearch }) => {
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
           gap: "20px",
+          marginLeft: "20px",
         }}
       >
         <div>

@@ -7,18 +7,18 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8f9fc;
-  color: #333;
+  background-color: #E0DFDA; /* #E0DFDA - light warm gray background */
+  color: #4a4a4a; /* Dark gray text for readability */
   line-height: 1.6;
 }
 
 /* Header */
 header {
-  background: linear-gradient(135deg, #007bff, #0056b3);
+  background: #AA9985; /* #AA9985 - warm brown header */
   color: white;
   padding: 35px 20px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(170, 153, 133, 0.2);
 }
 
 header h1 {
@@ -50,7 +50,7 @@ header p {
 
 .favorites-section {
   flex: 1;
-  background: white;
+  background: #CACACA; /* #CACACA - light gray favorites */
   border-radius: 12px;
   padding: 16px 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -62,7 +62,7 @@ header p {
 /* Search Form – Compact */
 .search-form {
   background: white;
-  padding: 16px 20px; /* Small padding */
+  padding: 16px 20px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   margin: 20px 0;
@@ -71,7 +71,7 @@ header p {
 .search-form h2 {
   text-align: center;
   margin-bottom: 12px;
-  color: #007bff;
+  color: #AA9985; /* #AA9985 - warm brown heading */
   font-size: 1.4rem;
   font-weight: 600;
 }
@@ -80,19 +80,19 @@ header p {
 .search-form > div > div {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 10px; /* Minimal gap */
+  gap: 10px;
 }
 
-/* Labels – No space below */
+/* Labels */
 .search-form label {
   display: block;
-  margin-bottom: 3px; /* Tiny space */
+  margin-bottom: 3px;
   font-weight: 600;
-  color: #444;
+  color: #4a4a4a;
   font-size: 0.85rem;
 }
 
-/* Inputs – Tight, small */
+/* Inputs */
 .search-form input,
 .search-form select {
   width: 100%;
@@ -106,11 +106,11 @@ header p {
 .search-form input:focus,
 .search-form select:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+  border-color: #AA9985; /* #AA9985 - warm brown focus */
+  box-shadow: 0 0 0 3px rgba(170, 153, 133, 0.15);
 }
 
-/* Search button – Compact */
+/* Search button */
 .search-form > div:last-child {
   text-align: center;
   margin-top: 12px;
@@ -121,9 +121,9 @@ header p {
   font-size: 1rem;
 }
 
-/* Buttons – Lifting + Shadow Hover (Kept as Requested) */
+/* Buttons – Warm brown primary */
 button {
-  background: #007bff;
+  background: #AA9985; /* #AA9985 - warm brown buttons */
   color: white;
   border: none;
   padding: 11px 22px;
@@ -131,29 +131,28 @@ button {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+  box-shadow: 0 4px 10px rgba(170, 153, 133, 0.2);
 }
 
 button:hover {
-  background: #0056b3;
+  background: #9a8976; /* Darker brown hover */
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 6px 15px rgba(170, 153, 133, 0.3);
 }
 
-/* Property Card – Subtle Shadow Hover Only (No Lift) */
+/* Property Card – Light gray background */
 .property-card {
   border: 1px solid #e0e0e0;
   border-radius: 12px;
-  background: white;
+  background: #CACACA; /* #CACACA - light gray cards */
   overflow: hidden;
   transition: box-shadow 0.4s ease, border-color 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .property-card:hover {
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.473); /* Deeper shadow only */
-  border-color: #bbd9ff;
-  /* No transform – no lifting */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  border-color: #CBC3B9; /* #CBC3B9 - taupe border on hover */
 }
 
 .property-image {
@@ -169,13 +168,13 @@ button:hover {
 .property-info h3 {
   margin: 0 0 8px;
   font-size: 1.2rem;
-  color: #007bff;
+  color: #AA9985; /* #AA9985 - warm brown */
 }
 
 .property-info h2 {
   margin: 8px 0;
   font-size: 1.5rem;
-  color: #333;
+  color: #4a4a4a;
 }
 
 .location {
@@ -206,29 +205,29 @@ button:hover {
 }
 
 .details-btn {
-  background: #007bff;
+  background: #AA9985;
   color: white;
 }
 
 .details-btn:hover {
-  background: #0056b3;
+  background: #9a8976;
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 6px 15px rgba(170, 153, 133, 0.3);
 }
 
 .favorite-btn {
-  background: #e91e63;
+  background: #A89A9E; /* #A89A9E - soft mauve */
   color: white;
 }
 
 .favorite-btn:hover:not(:disabled) {
-  background: #c2185b;
+  background: #988a8e;
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(233, 30, 99, 0.3);
+  box-shadow: 0 6px 15px rgba(168, 154, 158, 0.3);
 }
 
 .favorite-btn:disabled {
-  background: #999;
+  background: #ccc;
   cursor: not-allowed;
 }
 
@@ -248,7 +247,7 @@ button:hover {
     margin-top: 35px;
   }
 
-  form > div > div {
+  .search-form > div > div {
     grid-template-columns: 1fr;
   }
 }
@@ -258,34 +257,44 @@ button:hover {
     font-size: 2rem;
   }
 
-  form {
+  .search-form {
     padding: 16px;
   }
 
-  form h2 {
+  .search-form h2 {
     font-size: 1.4rem;
   }
 }
 
-.image-gallery-fullscreen-button,
-.image-gallery-play-button,
-.image-gallery-icon {
-  transition: none !important; 
-  background: transparent !important; 
-  color: rgba(255, 255, 255, 0.986) !important; 
-  box-shadow: none !important; 
-  transform: none !important; 
-  opacity: 0.7 !important; 
+/* Gallery arrows – centered with padding, no hover effect */
+.image-gallery-left-nav,
+.image-gallery-right-nav {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  bottom: auto !important;
+  padding-bottom: 80px !important;
 }
 
-.image-gallery-left-nav:hover,
-.image-gallery-right-nav:hover,
-.image-gallery-fullscreen-button:hover,
-.image-gallery-play-button:hover,
-.image-gallery-icon:hover {
+.image-gallery-fullscreen-button,
+.image-gallery-play-button {
+  bottom: 30px !important;
+  top: auto !important;
+}
+
+.image-gallery-icon,
+.image-gallery-fullscreen-button,
+.image-gallery-play-button {
+  transition: none !important;
   background: transparent !important;
-  color: inherit !important;
+  color: rgba(255, 255, 255, 0.8) !important;
   box-shadow: none !important;
   transform: none !important;
-  opacity: 0.7 !important; 
+}
+
+.image-gallery-icon:hover,
+.image-gallery-fullscreen-button:hover,
+.image-gallery-play-button:hover {
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  transform: none !important;
 }

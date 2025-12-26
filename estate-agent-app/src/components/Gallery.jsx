@@ -1,25 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import PropertyCard from './PropertyCard';
+import React, { useState, useEffect } from "react";
+import PropertyCard from "./PropertyCard";
 
-const Gallery = ({ criteria }) => {  // Added criteria prop from parent
-  const [allProperties, setAllProperties] = useState([]);  // All data from JSON
-  const [filteredProperties, setFilteredProperties] = useState([]);  // Filtered list
+const Gallery = ({ criteria }) => {
+  // Added criteria prop from parent
+  const [allProperties, setAllProperties] = useState([]); // All data from JSON
+  const [filteredProperties, setFilteredProperties] = useState([]); // Filtered list
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   // Fetch data once
   useEffect(() => {
-    fetch('/properties.json')
-      .then(response => {
-        if (!response.ok) throw new Error('Failed to load properties');
+    fetch("/properties.json")
+      .then((response) => {
+        if (!response.ok) throw new Error("Failed to load properties");
         return response.json();
       })
-      .then(data => {
+      .then((data) => {
         setAllProperties(data.properties);
-        setFilteredProperties(data.properties);  // Start with all
+        setFilteredProperties(data.properties); // Start with all
         setLoading(false);
       })
-      .catch(err => {
+      .catch((err) => {
         setError(err.message);
         setLoading(false);
       });
@@ -31,38 +32,52 @@ const Gallery = ({ criteria }) => {  // Added criteria prop from parent
       let filtered = allProperties;
 
       // Type filter
-      if (criteria.type && criteria.type !== 'Any') {
-        filtered = filtered.filter(p => p.type === criteria.type);
+      if (criteria.type && criteria.type !== "Any") {
+        filtered = filtered.filter((p) => p.type === criteria.type);
       }
 
       // Price filter
       if (criteria.minPrice) {
-        filtered = filtered.filter(p => p.price >= criteria.minPrice);
+        filtered = filtered.filter((p) => p.price >= criteria.minPrice);
       }
       if (criteria.maxPrice) {
-        filtered = filtered.filter(p => p.price <= criteria.maxPrice);
+        filtered = filtered.filter((p) => p.price <= criteria.maxPrice);
       }
 
       // Bedrooms filter
       if (criteria.minBedrooms) {
-        filtered = filtered.filter(p => p.bedrooms >= criteria.minBedrooms);
+        filtered = filtered.filter((p) => p.bedrooms >= criteria.minBedrooms);
       }
       if (criteria.maxBedrooms) {
-        filtered = filtered.filter(p => p.bedrooms <= criteria.maxBedrooms);
+        filtered = filtered.filter((p) => p.bedrooms <= criteria.maxBedrooms);
+      }
+
+      // Postcode area filter
+      if (criteria.postcodeArea) {
+        filtered = filtered.filter((p) =>
+          p.location.toUpperCase().includes(criteria.postcodeArea.toUpperCase())
+        );
       }
 
       setFilteredProperties(filtered);
     } else {
-      setFilteredProperties(allProperties);  // Reset if no criteria
+      setFilteredProperties(allProperties); // Reset if no criteria
     }
-  }, [criteria, allProperties]);  // Run when criteria or data changes
+  }, [criteria, allProperties]); // Run when criteria or data changes
 
   if (loading) return <p>Loading properties...</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '20px', padding: '20px' }}>
-      {filteredProperties.map(property => (
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+        gap: "20px",
+        padding: "20px",
+      }}
+    >
+      {filteredProperties.map((property) => (
         <PropertyCard key={property.id} property={property} />
       ))}
     </div>

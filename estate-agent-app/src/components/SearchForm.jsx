@@ -6,6 +6,7 @@ const SearchForm = ({ onSearch }) => {
   const [maxPrice, setMaxPrice] = useState('');
   const [minBedrooms, setMinBedrooms] = useState('');
   const [maxBedrooms, setMaxBedrooms] = useState('');
+  const [postcodeArea, setPostcodeArea] = useState(''); // ← NEW: postcode state
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,6 +17,7 @@ const SearchForm = ({ onSearch }) => {
       maxPrice: maxPrice ? Number(maxPrice) : null,
       minBedrooms: minBedrooms ? Number(minBedrooms) : null,
       maxBedrooms: maxBedrooms ? Number(maxBedrooms) : null,
+      postcodeArea: postcodeArea.trim() ? postcodeArea.trim().toUpperCase() : null, // ← NEW: add to criteria
     };
 
     onSearch(criteria);
@@ -61,10 +63,36 @@ const SearchForm = ({ onSearch }) => {
           <label>Max Bedrooms</label><br />
           <input type="number" min="1" value={maxBedrooms} onChange={e => setMaxBedrooms(e.target.value)} placeholder="e.g. 5" />
         </div>
+
+      
+        <div>
+          <label>Postcode Area</label><br />
+          <input
+            type="text"
+            value={postcodeArea}
+            onChange={e => setPostcodeArea(e.target.value.toUpperCase())}
+            placeholder="e.g. BR5"
+            style={{ 
+              width: '100%',
+              padding: '10px',
+              borderRadius: '5px',
+              border: '1px solid #ccc',
+              textTransform: 'uppercase'
+            }}
+          />
+        </div>
       </div>
 
       <div style={{ textAlign: 'center', marginTop: '30px' }}>
-        <button type="submit" style={{ padding: '12px 40px', fontSize: '16px', background: '#007bff', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer' }}>
+        <button type="submit" style={{ 
+          padding: '12px 40px', 
+          fontSize: '16px', 
+          background: '#007bff', 
+          color: 'white', 
+          border: 'none', 
+          borderRadius: '6px', 
+          cursor: 'pointer' 
+        }}>
           Search
         </button>
       </div>

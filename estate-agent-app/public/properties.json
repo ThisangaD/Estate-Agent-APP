@@ -25,7 +25,7 @@
         "/images/prop1-7.png"
       ],
       "floorPlan": "/images/prop1-floor.png",
-      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=...[paste real code for BR5 here]...\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2491.2!2d0.0739!3d51.3901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8ab75f3556c61%3A0x13f80d4ee138df6b!2sPetts%20Wood%20Road%2C%20Orpington!5e0!3m2!1sen!2suk!4v1640000000000!5m2!1sen!2suk\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
     },
     {
       "id": "prop2",
@@ -33,8 +33,8 @@
       "bedrooms": 2,
       "price": 399995,
       "tenure": "Freehold",
-      "description": "Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
-      "longDescription": "Modern ground-floor flat in pristine condition. Open-plan kitchen/living area with high-end appliances (dishwasher, washing machine), solid wood floors, and bi-folding doors to a private courtyard garden—perfect for entertaining. Two spacious double bedrooms, en-suite wet room to master, and family bathroom with shower over bath. Additional features: walnut doors, Sky TV wiring, ample storage. Built 5 years ago with remaining 10-year guarantee. Secure entry, parking available. Close to amenities and transport in Orpington.",
+      "description": "Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
+      "longDescription": "Modern ground-floor flat in pristine condition. Open-plan kitchen/living area with high-end appliances (dishwasher, washing machine), solid wood and carpet floors, and bi-folding doors to a private courtyard garden—perfect for entertaining and a gym. Two spacious double bedrooms, en-suite wet room to master, and family bathroom with shower over bath. Additional features: walnut doors, Sky TV wiring, ample storage. Built 5 years ago with remaining 10-year guarantee. Secure entry, parking available. Close to amenities and transport in Orpington.",
       "location": "Crofton Road Orpington BR6",
       "picture": "/images/prop2-main.png",
       "added": {
@@ -51,7 +51,7 @@
         "/images/prop2-6.png"
       ],
       "floorPlan": "/images/prop2-floor.png",
-      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=...[paste real code for BR6 here]...\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2490.8!2d0.1089!3d51.3756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8aaf0e0e0e0e0%3A0x0!2sCrofton%20Road%2C%20Orpington!5e0!3m2!1sen!2suk!4v1640000000000!5m2!1sen!2suk\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
     },
     {
       "id": "prop3",
@@ -60,7 +60,7 @@
       "price": 1200000,
       "tenure": "Freehold",
       "description": "Stunning four-bedroom detached house in a sought-after North London area. Features include a large open-plan kitchen/diner, two reception rooms, home office, and en-suite master bedroom. Beautifully landscaped garden and double garage. Close to parks and excellent schools.",
-      "longDescription": "This impressive detached family home spans over 2,000 sq ft. Ground floor: Entrance hall, spacious living room with fireplace, separate dining room, modern kitchen with island and integrated appliances, utility room, study/office, and guest WC. First floor: Master bedroom with en-suite shower, three additional double bedrooms (one with balcony), family bathroom. Exterior: Private driveway for 3 cars, double garage, south-facing garden with patio and lawn. Benefits: Solar panels, underfloor heating, smart home tech. Prime location near tube stations and green spaces. Perfect for growing families.",
+      "longDescription": "This impressive detached family home spans over 2,000 sq ft. Entrance hall, spacious living room with fireplace, separate dining room, modern kitchen with island and integrated appliances, utility room, study/office, and guest WC. Master bedroom with en-suite shower, three additional double bedrooms, family bathroom. Exterior: Private driveway for 3 cars, double garage, south-facing garden with patio and lawn. Benefits: Solar panels, underfloor heating, smart home tech. Prime location near tube stations and green spaces. Perfect for growing families.",
       "location": "Highgate Road, London NW5",
       "picture": "/images/prop3-main.png",
       "added": {
@@ -78,7 +78,7 @@
         "/images/prop3-7.png"
       ],
       "floorPlan": "/images/prop3-floor.png",
-      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=...[paste real code for NW5 here]...\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2478.2!2d-0.1462!3d51.5656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b3a6f5a0f5f%3A0x0!2sHighgate%20Road%2C%20London%20NW5!5e0!3m2!1sen!2suk!4v1640000000000!5m2!1sen!2suk\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
     },
     {
       "id": "prop4",
@@ -104,7 +104,7 @@
         "/images/prop4-6.png"
       ],
       "floorPlan": "/images/prop4-floor.png",
-      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=...[paste real code for SE10 here]...\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.5!2d-0.0103!3d51.4825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487602c0c0c0c0c0%3A0x0!2sGreenwich%20High%20Road%2C%20London%20SE10!5e0!3m2!1sen!2suk!4v1640000000000!5m2!1sen!2suk\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
     },
     {
       "id": "prop5",
@@ -131,7 +131,7 @@
         "/images/prop5-7.png"
       ],
       "floorPlan": "/images/prop5-floor.png",
-      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=...[paste real code for W11 here]...\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.8!2d-0.2037!3d51.5078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760ff0ff0ff0ff%3A0x0!2sHolland%20Park%20Avenue%2C%20London%20W11!5e0!3m2!1sen!2suk!4v1640000000000!5m2!1sen!2suk\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
     },
     {
       "id": "prop6",
@@ -157,15 +157,15 @@
         "/images/prop6-6.png"
       ],
       "floorPlan": "/images/prop6-floor.png",
-      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=...[paste real code for E14 here]...\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.1!2d-0.0197!3d51.5033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487602a0a0a0a0a0%3A0x0!2sMillharbour%2C%20London%20E14!5e0!3m2!1sen!2suk!4v1640000000000!5m2!1sen!2suk\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
     },
     {
       "id": "prop7",
       "type": "House",
-      "bedrooms": 1,
-      "price": 450000,
+      "bedrooms": 4,
+      "price": 1250000,
       "tenure": "Freehold",
-      "description": "Charming one-bedroom cottage in quiet South West London suburb. Open-plan layout, small garden, perfect for singles or couples. Renovated recently.",
+      "description": "Charming four-bedroom cottage in quiet South West London suburb. Open-plan layout, small garden, perfect for families. Renovated recently.",
       "longDescription": "Quaint end-of-terrace cottage with modern updates. Combined living/kitchen area with French doors to patio garden. Cozy bedroom upstairs with built-in storage, contemporary bathroom. Features: Gas central heating, double glazing, off-street parking. Freehold. Low maintenance garden with shed. Near local shops, parks, and train station to central London. Affordable entry-level home with character.",
       "location": "Kingston Road, London SW20",
       "picture": "/images/prop7-main.png",
@@ -183,7 +183,7 @@
         "/images/prop7-6.png"
       ],
       "floorPlan": "/images/prop7-floor.png",
-      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=...[paste real code for SW20 here]...\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2492.3!2d-0.2578!3d51.4156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487608b0b0b0b0b0%3A0x0!2sKingston%20Road%2C%20London%20SW20!5e0!3m2!1sen!2suk!4v1640000000000!5m2!1sen!2suk\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
     },
     {
       "id": "prop8",
@@ -211,7 +211,7 @@
         "/images/prop8-8.png"
       ],
       "floorPlan": "/images/prop8-floor.png",
-      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=...[paste real code for E20 here]...\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2694.5522863437723!2d-0.018022557544631137!3d51.5441348542329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761d6f0c0dfe91%3A0x9f8a1be15e0d425c!2sQueen%20Elizabeth%20Olympic%20Park!5e1!3m2!1sen!2suk!4v1766838426899!5m2!1sen!2suk\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
     },
     {
       "id": "prop9",
@@ -238,7 +238,7 @@
         "/images/prop9-7.png"
       ],
       "floorPlan": "/images/prop9-floor.png",
-      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=...[paste real code for TW10 here]...\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2487.2!2d-0.3037!3d51.4613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487608d0d0d0d0d0%3A0x0!2sQueen's%20Road%2C%20Richmond%2C%20London%20TW10!5e0!3m2!1sen!2suk!4v1640000000000!5m2!1sen!2suk\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
     }
   ]
 }

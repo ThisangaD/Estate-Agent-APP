@@ -1,33 +1,12 @@
 import React, { useState, useEffect } from "react";
 import PropertyCard from "./PropertyCard";
 
-const Gallery = ({ criteria , properties}) => {
-  const [allProperties, setAllProperties] = useState([]);
-  const [filteredProperties, setFilteredProperties] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+const Gallery = ({ criteria, properties }) => {
+  const [filteredProperties, setFilteredProperties] = useState(properties);
 
-  // Fetch properties.json once when component mounts
+  // Filter whenever criteria or properties change
   useEffect(() => {
-    fetch("/properties.json")
-      .then((response) => {
-        if (!response.ok) throw new Error("Failed to load properties");
-        return response.json();
-      })
-      .then((data) => {
-        setAllProperties(data.properties);
-        setFilteredProperties(data.properties);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, []);
-
-  // Filter whenever criteria changes
-  useEffect(() => {
-    let filtered = allProperties;
+    let filtered = properties;
 
     if (criteria) {
       // Type filter
@@ -88,10 +67,12 @@ const Gallery = ({ criteria , properties}) => {
     }
 
     setFilteredProperties(filtered);
-  }, [criteria, allProperties]);
+  }, [criteria, properties]);
 
-  if (loading) return <p style={{ textAlign: "center", padding: "50px" }}>Loading properties...</p>;
-  if (error) return <p style={{ textAlign: "center", color: "red" }}>Error: {error}</p>;
+  // Show loading state while properties are being fetched by parent
+  if (!properties || properties.length === 0) {
+    return <p style={{ textAlign: "center", padding: "50px" }}>Loading properties...</p>;
+  }
 
   return (
     <div

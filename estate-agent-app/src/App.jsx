@@ -12,9 +12,22 @@ function App() {
   const [properties, setProperties] = useState([]);
 
   useEffect(() => {
-    fetch("/properties.json")
-      .then((res) => res.json())
-      .then((data) => setProperties(data.properties));
+    // 💡 FIX: Use process.env.PUBLIC_URL to ensure correct pathing
+    // for both local development (usually just "/") and GitHub Pages (e.g., "/repo-name/").
+    const propertiesUrl = `${process.env.PUBLIC_URL}/properties.json`;
+
+    fetch(propertiesUrl)
+      .then((res) => {
+        // Essential error check: Stop parsing if the response is not a successful HTTP status
+        if (!res.ok) {
+          throw new Error(
+            `Failed to fetch properties: Status ${res.status}. Server returned HTML.`
+          );
+        }
+        return res.json();
+      })
+      .then((data) => setProperties(data.properties))
+      .catch((error) => console.error("Error loading property data:", error));
   }, []);
 
   const handleSearch = (criteria) => {

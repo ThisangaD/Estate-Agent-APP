@@ -167,6 +167,54 @@
       ],
       "floorPlan": "/images/prop7-floor.png",
       "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=...[paste real code for SW20 here]...\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
+    },
+    {
+      "id": "prop8",
+      "type": "Flat",
+      "bedrooms": 3,
+      "price": 625000,
+      "tenure": "Leasehold",
+      "description": "Stunning three-bedroom duplex apartment with private terrace in East London. Contemporary design with floor-to-ceiling windows, modern kitchen with island, and two luxury bathrooms. Secure gated development with communal gardens and gym facilities.",
+      "longDescription": "Exceptional duplex apartment spanning two floors in a modern riverside development. Ground floor: Open-plan living/dining area with integrated kitchen featuring Bosch appliances, guest WC, and access to private terrace (approx 25 sqm). First floor: Master bedroom with en-suite bathroom and built-in wardrobes, two additional double bedrooms, family bathroom with bath and separate shower. Features: Video entry system, underfloor heating, oak flooring, allocated parking space. Development amenities include 24-hour concierge, residents' gym, and landscaped communal gardens. Leasehold with 985 years remaining. Excellent transport links with Stratford station nearby.",
+      "location": "Olympic Park, Stratford, London E20",
+      "picture": "/images/prop8-main.png",
+      "added": {
+        "month": "August",
+        "day": 15,
+        "year": 2024
+      },
+      "images": [
+        "/images/prop8-1.png",
+        "/images/prop8-2.png",
+        "/images/prop8-3.png",
+        "/images/prop8-4.png"
+      ],
+      "floorPlan": "/images/prop8-floor.png",
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=...[paste real code for E20 here]...\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
+    },
+    {
+      "id": "prop9",
+      "type": "House",
+      "bedrooms": 2,
+      "price": 550000,
+      "tenure": "Freehold",
+      "description": "Beautifully renovated two-bedroom terraced house in desirable Richmond. Period features combined with modern conveniences. Private rear garden, off-street parking, and short walk to Richmond Park and town center.",
+      "longDescription": "Charming Victorian terraced house thoughtfully modernized throughout. Ground floor: Entrance hallway with original Victorian tiles, bright reception room with bay window and feature fireplace, extended kitchen/diner with bi-fold doors opening to garden, utility area. First floor: Two spacious double bedrooms with period features including high ceilings and large sash windows, contemporary family bathroom with rainfall shower and freestanding bath. Exterior: Low-maintenance rear garden with decking and lawn area, front garden with parking for one car. Additional features: New boiler, rewired electrics, double glazed windows, wooden flooring, close to Richmond station with direct links to central London. Perfect for young families or professionals seeking village charm with city access.",
+      "location": "Queen's Road, Richmond, London TW10",
+      "picture": "/images/prop9-main.png",
+      "added": {
+        "month": "February",
+        "day": 18,
+        "year": 2025
+      },
+      "images": [
+        "/images/prop9-1.png",
+        "/images/prop9-2.png",
+        "/images/prop9-3.png",
+        "/images/prop9-4.png"
+      ],
+      "floorPlan": "/images/prop9-floor.png",
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=...[paste real code for TW10 here]...\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
     }
   ]
 }

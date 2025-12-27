@@ -19,7 +19,10 @@
         "/images/prop1-1.png",
         "/images/prop1-2.png",
         "/images/prop1-3.png",
-        "/images/prop1-4.png"
+        "/images/prop1-4.png",
+        "/images/prop1-5.png",
+        "/images/prop1-6.png",
+        "/images/prop1-7.png"
       ],
       "floorPlan": "/images/prop1-floor.png",
       "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=...[paste real code for BR5 here]...\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
@@ -43,7 +46,9 @@
         "/images/prop2-1.png",
         "/images/prop2-2.png",
         "/images/prop2-3.png",
-        "/images/prop2-4.png"
+        "/images/prop2-4.png",
+        "/images/prop2-5.png",
+        "/images/prop2-6.png"
       ],
       "floorPlan": "/images/prop2-floor.png",
       "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=...[paste real code for BR6 here]...\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
@@ -67,7 +72,10 @@
         "/images/prop3-1.png",
         "/images/prop3-2.png",
         "/images/prop3-3.png",
-        "/images/prop3-4.png"
+        "/images/prop3-4.png",
+        "/images/prop3-5.png",
+        "/images/prop3-6.png",
+        "/images/prop3-7.png"
       ],
       "floorPlan": "/images/prop3-floor.png",
       "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=...[paste real code for NW5 here]...\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
@@ -91,7 +99,9 @@
         "/images/prop4-1.png",
         "/images/prop4-2.png",
         "/images/prop4-3.png",
-        "/images/prop4-4.png"
+        "/images/prop4-4.png",
+        "/images/prop4-5.png",
+        "/images/prop4-6.png"
       ],
       "floorPlan": "/images/prop4-floor.png",
       "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=...[paste real code for SE10 here]...\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
@@ -115,7 +125,10 @@
         "/images/prop5-1.png",
         "/images/prop5-2.png",
         "/images/prop5-3.png",
-        "/images/prop5-4.png"
+        "/images/prop5-4.png",
+        "/images/prop5-5.png",
+        "/images/prop5-6.png",
+        "/images/prop5-7.png"
       ],
       "floorPlan": "/images/prop5-floor.png",
       "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=...[paste real code for W11 here]...\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
@@ -139,7 +152,9 @@
         "/images/prop6-1.png",
         "/images/prop6-2.png",
         "/images/prop6-3.png",
-        "/images/prop6-4.png"
+        "/images/prop6-4.png",
+        "/images/prop6-5.png",
+        "/images/prop6-6.png"
       ],
       "floorPlan": "/images/prop6-floor.png",
       "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=...[paste real code for E14 here]...\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
@@ -163,7 +178,9 @@
         "/images/prop7-1.png",
         "/images/prop7-2.png",
         "/images/prop7-3.png",
-        "/images/prop7-4.png"
+        "/images/prop7-4.png",
+        "/images/prop7-5.png",
+        "/images/prop7-6.png"
       ],
       "floorPlan": "/images/prop7-floor.png",
       "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=...[paste real code for SW20 here]...\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"

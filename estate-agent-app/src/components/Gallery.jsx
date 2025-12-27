@@ -75,21 +75,41 @@ const Gallery = ({ criteria, properties }) => {
   }
 
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-        gap: "20px",
-        padding: "20px",
-        maxWidth: "1200px",
-        margin: "0 auto",
-      }}
-    >
-      {filteredProperties.map((property) => (
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+      gap: "20px",
+      padding: "20px",
+      maxWidth: "1200px",
+      margin: "0 auto",
+    }}
+  >
+    {filteredProperties.length === 0 ? (
+      <p
+        style={{
+          gridColumn: "1 / -1",           // Makes it span full width
+          textAlign: "center",
+          padding: "60px 20px",
+          fontSize: "1.4rem",
+          color: "#666",
+          fontStyle: "italic",
+          margin: "0",
+        }}
+      >
+        No properties found matching your criteria.
+        <br />
+        <span style={{ fontSize: "1rem", marginTop: "10px", display: "block" }}>
+          Try adjusting your filters.
+        </span>
+      </p>
+    ) : (
+      filteredProperties.map((property) => (
         <PropertyCard key={property.id} property={property} />
-      ))}
-    </div>
-  );
+      ))
+    )}
+  </div>
+);
 };
 
 export default Gallery;

@@ -187,7 +187,11 @@
         "/images/prop8-1.png",
         "/images/prop8-2.png",
         "/images/prop8-3.png",
-        "/images/prop8-4.png"
+        "/images/prop8-4.png",
+        "/images/prop8-5.png",
+        "/images/prop8-6.png",
+        "/images/prop8-7.png",
+        "/images/prop8-8.png"
       ],
       "floorPlan": "/images/prop8-floor.png",
       "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=...[paste real code for E20 here]...\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
@@ -211,7 +215,10 @@
         "/images/prop9-1.png",
         "/images/prop9-2.png",
         "/images/prop9-3.png",
-        "/images/prop9-4.png"
+        "/images/prop9-4.png",
+        "/images/prop9-5.png",
+        "/images/prop9-6.png",
+        "/images/prop9-7.png"
       ],
       "floorPlan": "/images/prop9-floor.png",
       "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=...[paste real code for TW10 here]...\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"

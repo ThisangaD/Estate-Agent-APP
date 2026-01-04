@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
 import { FavoritesProvider } from './context/FavoritesContext';
@@ -34,6 +34,8 @@ describe('Estate Agent App', () => {
                 location: 'Petts Wood Road, Petts Wood, Orpington BR5',
                 picture: '/images/prop1-main.png',
                 description: 'Attractive three bedroom...',
+                longDescription: '<p>This charming semi-detached house... family bathroom with separate WC...</p>',
+                images: ['/images/prop1-1.png', '/images/prop1-2.png'], // Add this to prevent .map error
               },
               {
                 id: 'prop2',
@@ -43,6 +45,8 @@ describe('Estate Agent App', () => {
                 location: 'London SW1',
                 picture: '/images/prop2-main.png',
                 description: 'Modern two bed flat...',
+                longDescription: '<p>Modern flat...</p>',
+                images: ['/images/prop2-1.png'],
               },
             ],
           }),
@@ -58,7 +62,7 @@ describe('Estate Agent App', () => {
     renderApp();
     expect(await screen.findByText(/Find your dream home in London/i)).toBeInTheDocument();
     expect(screen.getByText(/Find Your Property/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/Type/i)).toBeInTheDocument();
+    expect(screen.getByText('Any')).toBeInTheDocument(); // Type select shows "Any"
     expect(screen.getByRole('button', { name: /Search/i })).toBeInTheDocument();
   });
 
@@ -67,8 +71,10 @@ describe('Estate Agent App', () => {
     renderApp();
     await screen.findByText(/£750,000/i);
 
-    const typeSelect = screen.getByLabelText(/Type/i);
-    await user.selectOptions(typeSelect, 'House');
+    // Click the Type select and choose House
+    const typeSelect = screen.getByText('Any');
+    await user.click(typeSelect);
+    await user.click(screen.getByText('House')); // Select "House" from dropdown
 
     const searchButton = screen.getByRole('button', { name: /Search/i });
     await user.click(searchButton);
@@ -82,7 +88,8 @@ describe('Estate Agent App', () => {
     renderApp();
     await screen.findByText(/£750,000/i);
 
-    const maxPriceInput = screen.getByLabelText(/Max Price/i);
+    // Use placeholder since it's a standard input
+    const maxPriceInput = screen.getByPlaceholderText(/e.g. 1500000/i);
     await user.type(maxPriceInput, '500000');
 
     const searchButton = screen.getByRole('button', { name: /Search/i });
@@ -96,7 +103,6 @@ describe('Estate Agent App', () => {
     const user = userEvent.setup();
     renderApp();
 
-    // Use findAllByRole to get all buttons, then click the first one
     const addButtons = await screen.findAllByRole('button', { name: /Add to Favorites/i });
     await user.click(addButtons[0]);
 
@@ -108,5 +114,34 @@ describe('Estate Agent App', () => {
 
     expect(screen.getByText(/Favorites \(0\)/i)).toBeInTheDocument();
     expect(screen.getByText(/Drag properties here/i)).toBeInTheDocument();
+  });
+
+  test('shows "No properties found" message when filters match nothing', async () => {
+    const user = userEvent.setup();
+    renderApp();
+
+    await screen.findByText(/£750,000/i);
+
+    const maxPriceInput = screen.getByPlaceholderText(/e.g. 1500000/i);
+    await user.type(maxPriceInput, '100000');
+
+    const searchButton = screen.getByRole('button', { name: /Search/i });
+    await user.click(searchButton);
+
+    expect(screen.getByText(/No properties found matching your criteria/i)).toBeInTheDocument();
+    expect(screen.getByText(/Try adjusting your filters/i)).toBeInTheDocument();
+  });
+
+  test('navigates to property detail page when View Details is clicked', async () => {
+    const user = userEvent.setup();
+    renderApp();
+
+    await screen.findByText(/£750,000/i);
+
+    const detailButtons = screen.getAllByRole('button', { name: /View Details/i });
+    await user.click(detailButtons[0]);
+
+    // Now safe because images array exists
+    expect(await screen.findByText(/family bathroom with separate WC/i)).toBeInTheDocument();
   });
 });

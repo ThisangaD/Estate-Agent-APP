@@ -12,13 +12,11 @@ function App() {
   const [properties, setProperties] = useState([]);
 
   useEffect(() => {
-    // 💡 FIX: Use process.env.PUBLIC_URL to ensure correct pathing
-    // for both local development (usually just "/") and GitHub Pages (e.g., "/repo-name/").
+    //Load properties from JSON. PUBLIC_URL ensures correct path on GitHub Pages deployment
     const propertiesUrl = `${process.env.PUBLIC_URL}/properties.json`;
 
     fetch(propertiesUrl)
       .then((res) => {
-        // Essential error check: Stop parsing if the response is not a successful HTTP status
         if (!res.ok) {
           throw new Error(
             `Failed to fetch properties: Status ${res.status}. Server returned HTML.`
@@ -31,6 +29,7 @@ function App() {
   }, []);
 
   const handleSearch = (criteria) => {
+    //Receive search criteria from SearchForm and trigger Gallery filtering
     setSearchCriteria(criteria);
   };
 
@@ -57,6 +56,7 @@ function App() {
         <p>Find your dream home in London</p>
       </header>
 
+      {/* React Router setup – home page with search + gallery + favorites, detail page via /property/:id */}
       <Routes>
         {/* Search Page */}
         <Route

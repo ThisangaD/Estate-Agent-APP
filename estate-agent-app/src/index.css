@@ -38,7 +38,7 @@ header p {
   padding: 15px;
 }
 
-/* Layout */
+/* Flex layout – gallery takes more space, favorites sticky on desktop */
 .layout-flex {
   display: flex;
   gap: 30px;
@@ -236,7 +236,7 @@ button:hover {
   text-decoration: none;
 }
 
-/* Responsive */
+/* Responsive design */
 @media (max-width: 1024px) {
   .layout-flex {
     flex-direction: column;
@@ -266,7 +266,7 @@ button:hover {
   }
 }
 
-/* Gallery arrows – centered with padding, no hover effect */
+/* react-image-gallery customisations – clean, minimal controls */
 .image-gallery-left-nav,
 .image-gallery-right-nav {
   top: 50% !important;
@@ -299,7 +299,7 @@ button:hover {
   transform: none !important;
 }
 
-/* Make datepicker inputs full width and styled */
+/* react-datepicker full-width styling for consistent form look */
 .react-datepicker-wrapper,
 .react-datepicker__input-container,
 .react-datepicker__input-container input {

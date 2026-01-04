@@ -6,6 +6,7 @@ import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { HashRouter } from 'react-router-dom';
 
+// This simulates full app environment for accurate integration testing
 const renderApp = () => {
   return render(
     <DndProvider backend={HTML5Backend}>
@@ -71,7 +72,6 @@ describe('Estate Agent App', () => {
     renderApp();
     await screen.findByText(/£750,000/i);
 
-    // Click the Type select and choose House
     const typeSelect = screen.getByText('Any');
     await user.click(typeSelect);
     await user.click(screen.getByText('House')); // Select "House" from dropdown
@@ -88,7 +88,6 @@ describe('Estate Agent App', () => {
     renderApp();
     await screen.findByText(/£750,000/i);
 
-    // Use placeholder since it's a standard input
     const maxPriceInput = screen.getByPlaceholderText(/e.g. 1500000/i);
     await user.type(maxPriceInput, '500000');
 
@@ -141,7 +140,6 @@ describe('Estate Agent App', () => {
     const detailButtons = screen.getAllByRole('button', { name: /View Details/i });
     await user.click(detailButtons[0]);
 
-    // Now safe because images array exists
     expect(await screen.findByText(/family bathroom with separate WC/i)).toBeInTheDocument();
   });
 });

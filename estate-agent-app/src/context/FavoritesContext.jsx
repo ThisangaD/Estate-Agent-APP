@@ -8,6 +8,7 @@ export const FavoritesProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
 
   const addFavorite = (property) => {
+    // Add property to favorites with duplicate prevention (robust state management)
     setFavorites((prev) => {
       // Prevent duplicates
       if (prev.some(p => p.id === property.id)) return prev;
@@ -16,10 +17,12 @@ export const FavoritesProvider = ({ children }) => {
   };
 
   const removeFavorite = (id) => {
+    // Remove favorite by ID – used by button and drag-to-trash
     setFavorites((prev) => prev.filter(p => p.id !== id));
   };
 
   const clearFavorites = () => {
+    // Clear all favorites – provides complete list management
     setFavorites([]);
   };
 

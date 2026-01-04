@@ -13,6 +13,7 @@ const SearchForm = ({ onSearch }) => {
   const [addedAfter, setAddedAfter] = useState("");
   const [addedBefore, setAddedBefore] = useState("");
 
+  // Type options for react-select
   const typeOptions = [
     { value: "Any", label: "Any" },
     { value: "House", label: "House" },
@@ -22,6 +23,7 @@ const SearchForm = ({ onSearch }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Build criteria object – null for empty fields to allow flexible filtering
     const criteria = {
       type,
       minPrice: minPrice ? Number(minPrice) : null,

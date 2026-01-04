@@ -8,6 +8,9 @@ import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { FavoritesProvider } from './context/FavoritesContext';
 
+// HashRouter for client-side routing (compatible with GitHub Pages)
+// DndProvider + HTML5Backend for drag-and-drop functionality
+// FavoritesProvider for global favorites state management
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

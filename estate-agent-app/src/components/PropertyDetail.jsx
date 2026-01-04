@@ -22,7 +22,38 @@ const PropertyDetail = ({ properties }) => {
       <h1>
         {property.type} in {property.location}
       </h1>
-      <h2>£{property.price.toLocaleString()}</h2>
+      <h2>
+        £{property.price.toLocaleString()}
+        {
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+              gap: "15px",
+              margin: "30px 0",
+              padding: "20px",
+              background: "#f9f9f9",
+              borderRadius: "10px",
+              fontSize: "1.1rem",
+            }}
+          >
+            <div>
+              <strong>Bedrooms:</strong> {property.bedrooms}
+            </div>
+            <div>
+              <strong>Type:</strong> {property.type}
+            </div>
+            <div>
+              <strong>Tenure:</strong> {property.tenure || "N/A"}{" "}
+              {/* If you have tenure in JSON */}
+            </div>
+            <div>
+              <strong>Location:</strong> {property.location}
+            </div>
+            {/* Add more if in your JSON, e.g. garage if present */}
+          </div>
+        }
+      </h2>
 
       {/* Image Gallery */}
       <ImageGallery items={galleryImages} showThumbnails={true} />

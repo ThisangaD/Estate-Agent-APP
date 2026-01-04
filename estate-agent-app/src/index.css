@@ -298,3 +298,16 @@ button:hover {
   color: rgba(255, 255, 255, 0.9) !important;
   transform: none !important;
 }
+
+/* Make datepicker inputs full width and styled */
+.react-datepicker-wrapper,
+.react-datepicker__input-container,
+.react-datepicker__input-container input {
+  width: 100%;
+}
+
+.react-datepicker__input-container input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}

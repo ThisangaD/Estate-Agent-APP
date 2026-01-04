@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import Select from "react-select";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const SearchForm = ({ onSearch }) => {
   const [type, setType] = useState("Any");
@@ -10,6 +13,12 @@ const SearchForm = ({ onSearch }) => {
   const [addedAfter, setAddedAfter] = useState("");
   const [addedBefore, setAddedBefore] = useState("");
 
+  const typeOptions = [
+    { value: "Any", label: "Any" },
+    { value: "House", label: "House" },
+    { value: "Flat", label: "Flat" },
+  ];
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -19,9 +28,7 @@ const SearchForm = ({ onSearch }) => {
       maxPrice: maxPrice ? Number(maxPrice) : null,
       minBedrooms: minBedrooms ? Number(minBedrooms) : null,
       maxBedrooms: maxBedrooms ? Number(maxBedrooms) : null,
-      postcodeArea: postcodeArea.trim()
-        ? postcodeArea.trim().toUpperCase()
-        : null,
+      postcodeArea: postcodeArea.trim() ? postcodeArea.trim().toUpperCase() : null,
       addedAfter: addedAfter || null,
       addedBefore: addedBefore || null,
     };
@@ -44,75 +51,76 @@ const SearchForm = ({ onSearch }) => {
             marginLeft: "20px",
           }}
         >
+          {/* Enhanced Type Dropdown */}
           <div>
-            <label htmlFor="type">Type</label>
-            <br />
-            <select id="type" value={type} onChange={(e) => setType(e.target.value)}>
-              <option value="Any">Any</option>
-              <option value="House">House</option>
-              <option value="Flat">Flat</option>
-            </select>
+            <label>Type</label>
+            <Select
+              value={typeOptions.find(opt => opt.value === type)}
+              onChange={(option) => setType(option ? option.value : "Any")}
+              options={typeOptions}
+              placeholder="Select property type"
+              isClearable={false}
+            />
           </div>
 
+          {/* Price & Bedrooms - kept as enhanced number inputs */}
           <div>
-            <label htmlFor="minPrice">Min Price (£)</label>
-            <br />
+            <label>Min Price (£)</label>
             <input
-              id="minPrice"
               type="number"
               value={minPrice}
               onChange={(e) => setMinPrice(e.target.value)}
               placeholder="e.g. 200000"
+              min="0"
+              style={{ width: "100%", padding: "10px", borderRadius: "5px", border: "1px solid #ccc" }}
             />
           </div>
 
           <div>
-            <label htmlFor="maxPrice">Max Price (£)</label>
-            <br />
+            <label>Max Price (£)</label>
             <input
-              id="maxPrice"
               type="number"
               value={maxPrice}
               onChange={(e) => setMaxPrice(e.target.value)}
               placeholder="e.g. 1500000"
+              min="0"
+              style={{ width: "100%", padding: "10px", borderRadius: "5px", border: "1px solid #ccc" }}
             />
           </div>
 
           <div>
-            <label htmlFor="minBedrooms">Min Bedrooms</label>
-            <br />
+            <label>Min Bedrooms</label>
             <input
-              id="minBedrooms"
               type="number"
-              min="1"
               value={minBedrooms}
               onChange={(e) => setMinBedrooms(e.target.value)}
               placeholder="e.g. 2"
+              min="1"
+              style={{ width: "100%", padding: "10px", borderRadius: "5px", border: "1px solid #ccc" }}
             />
           </div>
 
           <div>
-            <label htmlFor="maxBedrooms">Max Bedrooms</label>
-            <br />
+            <label>Max Bedrooms</label>
             <input
-              id="maxBedrooms"
               type="number"
-              min="1"
               value={maxBedrooms}
               onChange={(e) => setMaxBedrooms(e.target.value)}
               placeholder="e.g. 5"
+              min="1"
+              style={{ width: "100%", padding: "10px", borderRadius: "5px", border: "1px solid #ccc" }}
             />
           </div>
 
+          {/* Postcode */}
           <div>
-            <label htmlFor="postcodeArea">Postcode Area</label>
-            <br />
+            <label>Postcode Area</label>
             <input
-              id="postcodeArea"
               type="text"
               value={postcodeArea}
               onChange={(e) => setPostcodeArea(e.target.value.toUpperCase())}
               placeholder="e.g. BR5"
+              maxLength="4"
               style={{
                 width: "100%",
                 padding: "10px",
@@ -123,37 +131,26 @@ const SearchForm = ({ onSearch }) => {
             />
           </div>
 
+          {/* Enhanced Date Pickers */}
           <div>
-            <label htmlFor="addedAfter">Added After</label>
-            <br />
-            <input
-              id="addedAfter"
-              type="date"
-              style={{
-                width: "100%",
-                padding: "10px",
-                borderRadius: "5px",
-                border: "1px solid #ccc",
-              }}
-              value={addedAfter}
-              onChange={(e) => setAddedAfter(e.target.value)}
+            <label>Added After</label>
+            <DatePicker
+              selected={addedAfter ? new Date(addedAfter) : null}
+              onChange={(date) => setAddedAfter(date ? date.toISOString().split("T")[0] : "")}
+              placeholderText="Select date"
+              dateFormat="yyyy-MM-dd"
+              className="form-control"
             />
           </div>
 
           <div>
-            <label htmlFor="addedBefore">Added Before</label>
-            <br />
-            <input
-              id="addedBefore"
-              type="date"
-              style={{
-                width: "100%",
-                padding: "10px",
-                borderRadius: "5px",
-                border: "1px solid #ccc",
-              }}
-              value={addedBefore}
-              onChange={(e) => setAddedBefore(e.target.value)}
+            <label>Added Before</label>
+            <DatePicker
+              selected={addedBefore ? new Date(addedBefore) : null}
+              onChange={(date) => setAddedBefore(date ? date.toISOString().split("T")[0] : "")}
+              placeholderText="Select date"
+              dateFormat="yyyy-MM-dd"
+              className="form-control"
             />
           </div>
         </div>
